@@ -3,6 +3,8 @@
  * and possible choices
  */
 const buttons = document.getElementsByTagName("button");
+const healthbarValuePlayer = document.querySelector('.healthbarValuePlayer');
+const healthbarValueMonster = document.querySelector('.healthbarValueMonster');
 let playerHealth = 100;
 let monsterHealth = 100;
 
@@ -23,6 +25,8 @@ for (let button of buttons) {
       if (this.getAttribute("data-type") === "startNewGame") {
         playerHealth = 100;
         monsterHealth = 100;
+        healthbarValuePlayer.style.width = '100%';
+        healthbarValueMonster.style.width = '100%';
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
       }
@@ -30,8 +34,10 @@ for (let button of buttons) {
       // Game attacks
       if (this.getAttribute("data-choice") === "attackMonster") {
         let attackValue = getRandomValue(5, 12);
-        monsterHealth -= attackValue;
+        monsterHealth -= attackValue; 
         attackPlayer();
+        healthbarValuePlayer.style.width = playerHealth + "%";
+        healthbarValueMonster.style.width = monsterHealth + "%";
         console.log("player attack: " + attackValue);
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
