@@ -2,7 +2,7 @@
  * Declare constants for DOM elements
  * and possible choices
  */
-let buttons = document.getElementsByTagName("button");
+const buttons = document.getElementsByTagName("button");
 let playerHealth = 100;
 let monsterHealth = 100;
 
