@@ -18,11 +18,12 @@
     <img src="assets/images/logo.png" alt="logo" class="logo"> Monster Slaying Game
   </h1>
 
-  <div id="game-area">
+  <section id="game-area">
 
-    <div class="player">
+    <div id="player">
       <h2>Small Human</h2>
       <img src="assets/images/player.png" alt="Player">
+
       <!-- Health bar -->
       <h2>Player Health</h2>
       <div class="healthbar">
@@ -30,17 +31,25 @@
       </div>
     </div>
 
-    <div class="monster">
+    <div id="monster">
       <h2>Big Monster</h2>
       <img src="assets/images/monster.png" alt="Monster">
+
       <!-- Health bar -->
       <h2>Monster Health</h2>
       <div class="healthbar">
         <div class="healthbarValue"></div>
       </div>
     </div>
+  </section>
 
-  </div>
+  <!-- Controls -->
+  <section class="controls">
+    <button data-type="attackMonster">Attack</button>
+    <button data-type="mayUseSpecialAttack" data-type="specialAttackMonster">Special Attack</button>
+    <button data-type="healPlayer">Heal</button>
+    <button data-type="surrender">Surrender</button>
+  </section>
   
 
   <script src="assets/js/script.js"></script>
