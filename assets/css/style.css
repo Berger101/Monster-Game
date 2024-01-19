@@ -59,7 +59,7 @@ img {
 
 /* Controls */
 
-.controls {
+#controls {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
