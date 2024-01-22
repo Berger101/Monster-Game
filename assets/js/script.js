@@ -42,6 +42,7 @@ for (let button of buttons) {
         currentRound = 0;
         healthbarValuePlayer.style.width = '100%';
         healthbarValueMonster.style.width = '100%';
+        mayUseSpecialAttack();
         console.clear();
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
