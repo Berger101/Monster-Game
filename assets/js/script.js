@@ -19,7 +19,6 @@ for (let button of buttons) {
   button.addEventListener("click", function () {
     let playerChoice = this.getAttribute("data-choice");
     console.log(playerChoice);
-    //playGame(playerChoice);
 
       // Start new game
       if (this.getAttribute("data-type") === "startNewGame") {
@@ -43,11 +42,6 @@ for (let button of buttons) {
         console.log("monster health: " + monsterHealth);
       }
   });
-}
-
-function playGame(playerChoice) {
-
-  
 }
 
 /**
