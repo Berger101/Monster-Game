@@ -14,6 +14,9 @@ function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+/**
+ * function for when the player can or cannot use special attack button
+ */
 function mayUseSpecialAttack() {
   // currentRound reset
   if (currentRound === 4 || currentRound === 0) {
@@ -84,8 +87,6 @@ for (let button of buttons) {
       } 
   });
 }
-
-
 
 /**
  * Function for attacking the player each time an action is made
