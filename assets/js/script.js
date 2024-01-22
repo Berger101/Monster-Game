@@ -31,10 +31,10 @@ for (let button of buttons) {
         console.log("monster health: " + monsterHealth);
       }
 
-      // Game attacks
+      // Game player attacks
       if (this.getAttribute("data-choice") === "attackMonster") {
         let attackValue = getRandomValue(5, 12);
-        monsterHealth -= attackValue; 
+        monsterHealth -= attackValue;
         attackPlayer();
         healthbarValuePlayer.style.width = playerHealth + "%";
         healthbarValueMonster.style.width = monsterHealth + "%";
@@ -50,6 +50,9 @@ function playGame(playerChoice) {
   
 }
 
+/**
+ * Function for attacking the player each time an action is made
+ */
 function attackPlayer() {
   let attackValue = getRandomValue(8, 15);
   playerHealth -= attackValue;
