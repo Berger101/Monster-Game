@@ -26,6 +26,7 @@ for (let button of buttons) {
         monsterHealth = 100;
         healthbarValuePlayer.style.width = '100%';
         healthbarValueMonster.style.width = '100%';
+        console.clear();
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
       }
