@@ -34,6 +34,9 @@ function mayUseSpecialAttack() {
 }
 mayUseSpecialAttack();
 
+/**
+ * function for when the player can or cannot use heal player button
+ */
 function mayUseHealPlayer() {
   // currentRound reset
   if (roundCounter === 3) {
@@ -50,7 +53,7 @@ function mayUseHealPlayer() {
 mayUseHealPlayer();
 
 /**
- * Add event listener to all the buttons
+ * Adding event listener to all the buttons
  */
 for (let button of buttons) {
   button.addEventListener("click", function () {
@@ -136,6 +139,7 @@ for (let button of buttons) {
 
         if (playerHealth + healValue >= 100) {
           playerHealth = 100;
+          healthbarValueMonster.style.width = '100%';
         } else {
           playerHealth += healValue;
         }
