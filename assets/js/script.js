@@ -14,6 +14,9 @@ let currentRound = 0;
 let roundCounter = 0;
 let winner = null;
 
+/**
+ * Puts in a random value for damage or heal
+ */
 function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
