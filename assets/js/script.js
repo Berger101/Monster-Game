@@ -19,13 +19,13 @@ function getRandomValue(min, max) {
  */
 function mayUseSpecialAttack() {
   // currentRound reset
-  if (currentRound === 4 || currentRound === 0) {
+  if (currentRound === 4) {
     currentRound = 0;
     disabledButton.disabled = true;
   } else if (currentRound === 3) {
     disabledButton.disabled = false;
   }
-  else if (currentRound === 0 || currentRound === 1 || currentRound === 2 || currentRound === 4) {
+  else if (currentRound != 3) {
     disabledButton.disabled = true;
   }
 }
