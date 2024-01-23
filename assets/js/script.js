@@ -40,7 +40,7 @@ for (let button of buttons) {
     console.log(playerChoice);
 
       // Start new game
-      if (this.getAttribute("data-type") === "startNewGame") {
+      if (this.getAttribute("data-choice") === "startNewGame") {
         playerHealth = 100;
         monsterHealth = 100;
         currentRound = 0;
@@ -53,7 +53,20 @@ for (let button of buttons) {
         console.log("current round: " + currentRound);
       }
 
-      // Game data choice
+      // Surrender
+      if (this.getAttribute("data-choice") === "surrender") {
+        playerHealth = 100;
+        monsterHealth = 100;
+        currentRound = 0;
+        healthbarValuePlayer.style.width = '100%';
+        healthbarValueMonster.style.width = '100%';
+        mayUseSpecialAttack();
+        console.clear();
+        console.log("player health: " + playerHealth);
+        console.log("monster health: " + monsterHealth);
+        console.log("current round: " + currentRound);
+      }
+
       // player attacks
       if (this.getAttribute("data-choice") === "attackMonster") {
         let attackValue = getRandomValue(5, 12);
