@@ -5,10 +5,12 @@
 const buttons = document.getElementsByTagName("button");
 const healthbarValuePlayer = document.querySelector('.healthbarValuePlayer');
 const healthbarValueMonster = document.querySelector('.healthbarValueMonster');
-const disabledButton = document.querySelector('.disabled');
+const disableSpecialAttack = document.querySelector('.disableSpecialAttack');
+const disableHealPlayer = document.querySelector('.disableHealPlayer');
 let playerHealth = 100;
 let monsterHealth = 100;
 let currentRound = 0;
+let roundCounter = 0;
 
 function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -20,16 +22,32 @@ function getRandomValue(min, max) {
 function mayUseSpecialAttack() {
   // currentRound reset
   if (currentRound === 4) {
-    currentRound = 0;
-    disabledButton.disabled = true;
-  } else if (currentRound === 3) {
-    disabledButton.disabled = false;
+    currentRound = 1;
+    disableSpecialAttack.disabled = true;
+  }
+  else if (currentRound === 3) {
+    disableSpecialAttack.disabled = false;
   }
   else if (currentRound != 3) {
-    disabledButton.disabled = true;
+    disableSpecialAttack.disabled = true;
   }
 }
 mayUseSpecialAttack();
+
+function mayUseHealPlayer() {
+  // currentRound reset
+  if (roundCounter === 3) {
+    roundCounter = 1;
+    disableHealPlayer.disabled = true;
+  }
+  else if (roundCounter === 2) {
+    disableHealPlayer.disabled = false;
+  }
+  else if (roundCounter != 2) {
+    disableHealPlayer.disabled = true;
+  }
+}
+mayUseHealPlayer();
 
 /**
  * Add event listener to all the buttons
@@ -44,13 +62,16 @@ for (let button of buttons) {
         playerHealth = 100;
         monsterHealth = 100;
         currentRound = 0;
+        roundCounter = 0;
         healthbarValuePlayer.style.width = '100%';
         healthbarValueMonster.style.width = '100%';
         mayUseSpecialAttack();
+        mayUseHealPlayer();
         console.clear();
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
+        console.log("round counter: " + roundCounter);
       }
 
       // Surrender
@@ -58,13 +79,16 @@ for (let button of buttons) {
         playerHealth = 100;
         monsterHealth = 100;
         currentRound = 0;
+        roundCounter = 0;
         healthbarValuePlayer.style.width = '100%';
         healthbarValueMonster.style.width = '100%';
         mayUseSpecialAttack();
+        mayUseHealPlayer();
         console.clear();
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
+        console.log("round counter: " + roundCounter);
       }
 
       // player attacks
@@ -75,11 +99,14 @@ for (let button of buttons) {
         healthbarValuePlayer.style.width = playerHealth + "%";
         healthbarValueMonster.style.width = monsterHealth + "%";
         currentRound++;
+        roundCounter++;
         mayUseSpecialAttack();
+        mayUseHealPlayer();
         console.log("player attack: " + attackValue);
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
+        console.log("round counter: " + roundCounter);
       }
 
       // Special attack
@@ -91,13 +118,40 @@ for (let button of buttons) {
           healthbarValuePlayer.style.width = playerHealth + "%";
           healthbarValueMonster.style.width = monsterHealth + "%";
           currentRound = 0;
+          roundCounter++;
           mayUseSpecialAttack();
+          mayUseHealPlayer();
           console.log("player attack: " + attackValue);
           console.log("player health: " + playerHealth);
           console.log("monster health: " + monsterHealth);
           console.log("current round: " + currentRound);
+          console.log("round counter: " + roundCounter);
         }
-      } 
+      }
+
+      // Heal player
+      if (this.getAttribute("data-choice") === "healPlayer") {
+
+        let healValue = getRandomValue(8, 20);
+
+        if (playerHealth + healValue >= 100) {
+          playerHealth = 100;
+        } else {
+          playerHealth += healValue;
+        }
+        attackPlayer();
+        healthbarValuePlayer.style.width = playerHealth + "%";
+        healthbarValueMonster.style.width = monsterHealth + "%";
+        currentRound++;
+        roundCounter = 0;
+        mayUseSpecialAttack();
+        mayUseHealPlayer();
+        console.log("player heal: " + healValue);
+        console.log("player health: " + playerHealth);
+        console.log("monster health: " + monsterHealth);
+        console.log("current round: " + currentRound);
+        console.log("round counter: " + roundCounter);
+      }
   });
 }
 
@@ -107,5 +161,5 @@ for (let button of buttons) {
 function attackPlayer() {
   let attackValue = getRandomValue(8, 15);
   playerHealth -= attackValue;
-  console.log("monster attack: " +attackValue);
+  console.log("monster attack: " + attackValue);
 }
