@@ -3,11 +3,11 @@
  * and possible choices
  */
 const buttons = document.getElementsByTagName("button");
-const healthbarValuePlayer = document.querySelector('.healthbarValuePlayer');
-const healthbarValueMonster = document.querySelector('.healthbarValueMonster');
-const disableSpecialAttack = document.querySelector('.disableSpecialAttack');
-const disableHealPlayer = document.querySelector('.disableHealPlayer');
-const disable = document.querySelectorAll('.disable');
+const healthbarValuePlayer = document.querySelector(".healthbarValuePlayer");
+const healthbarValueMonster = document.querySelector(".healthbarValueMonster");
+const disableSpecialAttack = document.querySelector(".disableSpecialAttack");
+const disableHealPlayer = document.querySelector(".disableHealPlayer");
+const disable = document.querySelectorAll(".disable");
 let playerHealth = 100;
 let monsterHealth = 100;
 let currentRound = 0;
@@ -29,22 +29,22 @@ function winGame() {
     winner = "draw";
     playerHealth = 0;
     monsterHealth = 0;
-    healthbarValuePlayer.style.width = '0%';
-    healthbarValueMonster.style.width = '0%';
+    healthbarValuePlayer.style.width = "0%";
+    healthbarValueMonster.style.width = "0%";
     disable.disabled = true;
     console.log("It's a draw!");
   } 
   else if (playerHealth <= 0) {
     winner = "monster";
     playerHealth = 0;
-    healthbarValuePlayer.style.width = '0%';
+    healthbarValuePlayer.style.width = "0%";
     disable.disabled = true;
     console.log("Monster wins!");
   }
   else if (monsterHealth <= 0) {
     winner = "player";
     monsterHealth = 0;
-    healthbarValueMonster.style.width = '0%';
+    healthbarValueMonster.style.width = "0%";
     disable.disabled = true;
     console.log("Player wins!");
   }
@@ -102,8 +102,8 @@ for (let button of buttons) {
         currentRound = 0;
         roundCounter = 0;
         winner = null;
-        healthbarValuePlayer.style.width = '100%';
-        healthbarValueMonster.style.width = '100%';
+        healthbarValuePlayer.style.width = "100%";
+        healthbarValueMonster.style.width = "100%";
         mayUseSpecialAttack();
         mayUseHealPlayer();
         console.clear();
@@ -121,8 +121,8 @@ for (let button of buttons) {
         currentRound = 0;
         roundCounter = 0;
         winner = null;
-        healthbarValuePlayer.style.width = '100%';
-        healthbarValueMonster.style.width = '100%';
+        healthbarValuePlayer.style.width = "100%";
+        healthbarValueMonster.style.width = "100%";
         mayUseSpecialAttack();
         mayUseHealPlayer();
         console.clear();
@@ -180,7 +180,7 @@ for (let button of buttons) {
 
         if (playerHealth + healValue >= 100) {
           playerHealth = 100;
-          healthbarValueMonster.style.width = '100%';
+          healthbarValueMonster.style.width = "100%";
         } else {
           playerHealth += healValue;
         }
