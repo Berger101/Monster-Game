@@ -50,11 +50,11 @@ let monsters = {
     image: 'assets/images/monster.png',
     attackMin: 5,
     attackMax: 10,
-  },
 
-  attackPlayer: function() {
-    attackPlayer(this);
-  }
+    performAttack: function() {
+      attackPlayer(this, this.attackMin, this.attackMax);
+    }
+  },
 };
 
 /**
