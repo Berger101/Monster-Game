@@ -193,7 +193,7 @@ for (let button of buttons) {
       if (playerChoice === "attackMonster") {
         let attackValue = getRandomValue(5, 12);
         monsterHealth -= attackValue;
-        monsters.monster1.performAttack();
+        currentMonster.performAttack();
         healthbarValuePlayer.style.width = playerHealth + "%";
         healthbarValueMonster.style.width = monsterHealth + "%";
         currentRound++;
@@ -213,7 +213,7 @@ for (let button of buttons) {
         if (currentRound === 3) {
           let attackValue = getRandomValue(10, 25);
           monsterHealth -= attackValue;
-          monsters.monster1.performAttack();
+          currentMonster.performAttack();
           healthbarValuePlayer.style.width = playerHealth + "%";
           healthbarValueMonster.style.width = monsterHealth + "%";
           currentRound = 0;
@@ -240,7 +240,7 @@ for (let button of buttons) {
         } else {
           playerHealth += healValue;
         }
-        monsters.monster1.performAttack();
+        currentMonster.performAttack();
         healthbarValuePlayer.style.width = playerHealth + "%";
         healthbarValueMonster.style.width = monsterHealth + "%";
         currentRound++;
