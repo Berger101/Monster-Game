@@ -33,7 +33,7 @@ function attackPlayer(monsterObj, attackMin, attackMax) {
 // Creating monsters object
 let monsters = {
   monster1: {
-    name: 'Big monster',
+    name: 'Big Monster',
     health: 100,
     image: 'assets/images/monster.png',
     attackMin: 8,
@@ -45,17 +45,37 @@ let monsters = {
   },
 
   monster2: {
-    name: 'Small Monster',
+    name: 'Fire Demon',
     health: 80,
-    image: 'assets/images/monster.png',
-    attackMin: 5,
-    attackMax: 10,
+    image: 'assets/images/firedemon.png',
+    attackMin: 11,
+    attackMax: 17,
 
     performAttack: function() {
       attackPlayer(this, this.attackMin, this.attackMax);
     }
   },
 };
+
+// Select a random monster during initialization
+const monsterKeys = Object.keys(monsters);
+const randomMonsterKey = monsterKeys[Math.floor(Math.random() * monsterKeys.length)];
+const currentMonster = monsters[randomMonsterKey];
+
+if (currentMonster === monsters.monster2) {
+  monsterHealth = 80;
+  healthbarValueMonster.style.width = "80%";
+}
+
+// Display details of the selected random monster
+document.getElementById('monsterName').textContent = `${currentMonster.name}`;
+document.getElementById('monsterImage').src = currentMonster.image;
+document.getElementById('monsterHealthbar').textContent = `Health: ${currentMonster.health}`;
+
+// Example: Display details of the selected random monster
+console.log(`Randomly selected monster: ${currentMonster.name}`);
+console.log(`Monster Health: ${currentMonster.health}`);
+console.log(`Monster Image: ${currentMonster.image}`);
 
 /**
  * Function for who wins the game
