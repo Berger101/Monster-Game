@@ -22,6 +22,42 @@ function getRandomValue(min, max) {
 }
 
 /**
+ * Function for attacking the player each time an action is made
+ */
+function attackPlayer(monsterObj, attackMin, attackMax) {
+  let attackValue = getRandomValue(attackMin, attackMax);
+  playerHealth -= attackValue;
+  console.log(`${monsterObj.name} attacked! Player health reduced by: ${attackValue}`);
+}
+
+// Creating monsters object
+let monsters = {
+  monster1: {
+    name: 'Big monster',
+    health: 100,
+    image: 'assets/images/monster.png',
+    attackMin: 8,
+    attackMax: 15,
+
+    performAttack: function() {
+      attackPlayer(this, this.attackMin, this.attackMax);
+    }
+  },
+
+  monster2: {
+    name: 'Small Monster',
+    health: 80,
+    image: 'assets/images/monster.png',
+    attackMin: 5,
+    attackMax: 10,
+  },
+
+  attackPlayer: function() {
+    attackPlayer(this);
+  }
+};
+
+/**
  * Function for who wins the game
  */
 function winGame() {
@@ -137,7 +173,7 @@ for (let button of buttons) {
       if (this.getAttribute("data-choice") === "attackMonster") {
         let attackValue = getRandomValue(5, 12);
         monsterHealth -= attackValue;
-        attackPlayer();
+        monsters.monster1.performAttack();
         healthbarValuePlayer.style.width = playerHealth + "%";
         healthbarValueMonster.style.width = monsterHealth + "%";
         currentRound++;
@@ -157,7 +193,7 @@ for (let button of buttons) {
         if (currentRound === 3) {
           let attackValue = getRandomValue(10, 25);
           monsterHealth -= attackValue;
-          attackPlayer();
+          monsters.monster1.performAttack();
           healthbarValuePlayer.style.width = playerHealth + "%";
           healthbarValueMonster.style.width = monsterHealth + "%";
           currentRound = 0;
@@ -184,7 +220,7 @@ for (let button of buttons) {
         } else {
           playerHealth += healValue;
         }
-        attackPlayer();
+        monsters.monster1.performAttack();
         healthbarValuePlayer.style.width = playerHealth + "%";
         healthbarValueMonster.style.width = monsterHealth + "%";
         currentRound++;
@@ -199,13 +235,4 @@ for (let button of buttons) {
         console.log("round counter: " + roundCounter);
       }
   });
-}
-
-/**
- * Function for attacking the player each time an action is made
- */
-function attackPlayer() {
-  let attackValue = getRandomValue(8, 15);
-  playerHealth -= attackValue;
-  console.log("monster attack: " + attackValue);
 }
