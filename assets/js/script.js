@@ -317,3 +317,10 @@ function logMessage(message) {
 
   document.getElementById('logContainer').appendChild(logDiv);
 }
+
+/**
+ * Function for clearing the log everytime new game is commenced
+ */
+function clearLog() {
+  document.getElementById('logContainer').innerHTML = '';
+}
