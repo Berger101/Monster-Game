@@ -81,25 +81,26 @@ let monsters = {
   },
 };
 
-// Select a random monster during initialization
-const monsterKeys = Object.keys(monsters);
-const randomMonsterKey = monsterKeys[Math.floor(Math.random() * monsterKeys.length)];
-const currentMonster = monsters[randomMonsterKey];
+function displayRandomMonster() {
+  // Select a random monster during initialization
+  const monsterKeys = Object.keys(monsters);
+  const randomMonsterKey = monsterKeys[Math.floor(Math.random() * monsterKeys.length)];
+  const currentMonster = monsters[randomMonsterKey];
 
-if (currentMonster === monsters.monster2) {
-  monsterHealth = 80;
-  healthbarValueMonster.style.width = "80%";
+  if (currentMonster === monsters.monster2) {
+    monsterHealth = 80;
+    healthbarValueMonster.style.width = "80%";
+  }
+  
+  // Display details of the selected random monster
+  document.getElementById('monsterName').textContent = `${currentMonster.name}`;
+  document.getElementById('monsterImage').src = currentMonster.image;
+
+  // Display details of the selected random monster
+  console.log(`Randomly selected monster: ${currentMonster.name}`);
+  console.log(`Monster Health: ${currentMonster.health}`);
 }
-
-// Display details of the selected random monster
-document.getElementById('monsterName').textContent = `${currentMonster.name}`;
-document.getElementById('monsterImage').src = currentMonster.image;
-document.getElementById('monsterHealthbar').textContent = `Health: ${currentMonster.health}`;
-
-// Example: Display details of the selected random monster
-console.log(`Randomly selected monster: ${currentMonster.name}`);
-console.log(`Monster Health: ${currentMonster.health}`);
-console.log(`Monster Image: ${currentMonster.image}`);
+displayRandomMonster();
 
 /**
  * Function for who wins the game
