@@ -214,6 +214,8 @@ for (let button of buttons) {
         mayUseSpecialAttack();
         mayUseHealPlayer();
         displayRandomMonster();
+
+        // Console log message
         console.clear();
         console.log("New game started");
         console.log(`You fight: ${currentMonster.name}`);
@@ -221,6 +223,8 @@ for (let button of buttons) {
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
         console.log("round counter: " + roundCounter);
+
+        // Message in logContainer
         clearLog();
         logMessage(`You fight: ${currentMonster.name}`);
         logMessage("Player Health: " + playerHealth);
@@ -239,6 +243,8 @@ for (let button of buttons) {
         mayUseSpecialAttack();
         mayUseHealPlayer();
         displayRandomMonster();
+
+        // Console log message
         console.clear();
         console.log("You surrendered!");
         console.log(`You fight: ${currentMonster.name}`);
@@ -246,6 +252,8 @@ for (let button of buttons) {
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
         console.log("round counter: " + roundCounter);
+
+        // Message in logContainer
         clearLog();
         logMessage("You surrendered!");
         logMessage(`You fight: ${currentMonster.name}`);
@@ -265,6 +273,8 @@ for (let button of buttons) {
         mayUseSpecialAttack();
         mayUseHealPlayer();
         winGame();
+
+        // Console log message
         console.log("player attack: " + attackValue);
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
@@ -285,6 +295,8 @@ for (let button of buttons) {
           mayUseSpecialAttack();
           mayUseHealPlayer();
           winGame();
+
+          // Console log message
           console.log("player attack: " + attackValue);
           console.log("player health: " + playerHealth);
           console.log("monster health: " + monsterHealth);
@@ -312,6 +324,8 @@ for (let button of buttons) {
         mayUseSpecialAttack();
         mayUseHealPlayer();
         winGame();
+
+        // Console log message
         console.log("player heal: " + healValue);
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
