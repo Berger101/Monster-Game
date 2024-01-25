@@ -81,11 +81,17 @@ let monsters = {
   },
 };
 
+// Declaring currentMonster to be accessible globaly
+let currentMonster;
+
+/**
+ * Function for displaying random monster everytime browser is reloaded or a new game starts
+ */
 function displayRandomMonster() {
-  // Select a random monster during initialization
+  // Select a random monster when browser loads
   const monsterKeys = Object.keys(monsters);
   const randomMonsterKey = monsterKeys[Math.floor(Math.random() * monsterKeys.length)];
-  const currentMonster = monsters[randomMonsterKey];
+  currentMonster = monsters[randomMonsterKey];
 
   if (currentMonster === monsters.monster2) {
     monsterHealth = 80;
