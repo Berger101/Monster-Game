@@ -308,7 +308,7 @@ for (let button of buttons) {
 }
 
 /**
- * 
+ * Function for logging the message to the browser
  */
 function logMessage(message) {
   
