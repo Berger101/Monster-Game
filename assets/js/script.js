@@ -30,6 +30,11 @@ function attackPlayer(monsterObj, attackMin, attackMax) {
   console.log(`${monsterObj.name} attacked! Player health reduced by: ${attackValue}`);
 }
 
+function healMonster(monsterObj, healAmount) {
+  monsterHealth += healAmount;
+  console.log(`${monsterObj.name} healed! Monster health increased by: ${healAmount}`);
+}
+
 // Creating monsters object
 let monsters = {
   monster1: {
@@ -77,6 +82,10 @@ let monsters = {
 
     performAttack: function() {
       attackPlayer(this, this.attackMin, this.attackMax);
+
+      if (this === currentMonster) {
+        healMonster(this, 2); // Add 2 health points if it's the current monster (monster4)
+      }
     }
   },
 };
