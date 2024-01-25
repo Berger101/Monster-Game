@@ -114,11 +114,16 @@ function displayRandomMonster() {
   document.getElementById('monsterName').textContent = `${currentMonster.name}`;
   document.getElementById('monsterImage').src = currentMonster.image;
 
-  // Display details of the selected random monster
-  console.log(`Randomly selected monster: ${currentMonster.name}`);
-  console.log(`Monster Health: ${currentMonster.health}`);
-
-  logMessage(`Randomly selected monster: ${currentMonster.name}`);
+  // Console log message
+  console.log(`You fight: ${currentMonster.name}`);
+  console.log("Player Health: " + playerHealth);
+  console.log("Monster Health: " + monsterHealth);
+  console.log("current round: " + currentRound);
+  console.log("round counter: " + roundCounter);
+  
+  // Message in logContainer
+  logMessage(`You fight: ${currentMonster.name}`);
+  logMessage("Player Health: " + playerHealth);
   logMessage("Monsters Health: " + monsterHealth);
 }
 displayRandomMonster();
@@ -211,13 +216,14 @@ for (let button of buttons) {
         displayRandomMonster();
         console.clear();
         console.log("New game started");
-        console.log(`Randomly selected monster: ${currentMonster.name}`);
+        console.log(`You fight: ${currentMonster.name}`);
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
         console.log("round counter: " + roundCounter);
         clearLog();
-        logMessage(`Randomly selected monster: ${currentMonster.name}`);
+        logMessage(`You fight: ${currentMonster.name}`);
+        logMessage("Player Health: " + playerHealth);
         logMessage("Monsters Health: " + monsterHealth);
       }
 
@@ -235,13 +241,15 @@ for (let button of buttons) {
         displayRandomMonster();
         console.clear();
         console.log("You surrendered!");
-        console.log(`Randomly selected monster: ${currentMonster.name}`);
+        console.log(`You fight: ${currentMonster.name}`);
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
         console.log("round counter: " + roundCounter);
         clearLog();
-        logMessage(`Randomly selected monster: ${currentMonster.name}`);
+        logMessage("You surrendered!");
+        logMessage(`You fight: ${currentMonster.name}`);
+        logMessage("Player Health: " + playerHealth);
         logMessage("Monsters Health: " + monsterHealth);
       }
 
