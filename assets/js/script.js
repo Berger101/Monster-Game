@@ -15,6 +15,40 @@ let roundCounter = 0;
 let winner = null;
 
 /**
+ * Function for starting a new game
+ */
+function resetGame() {
+
+  // Reseting all the variables
+  playerHealth = 100;
+  monsterHealth = 100;
+  currentRound = 0;
+  roundCounter = 0;
+  winner = null;
+  healthbarValuePlayer.style.width = "100%";
+  healthbarValueMonster.style.width = "100%";
+
+  // Calling functions
+  mayUseSpecialAttack();
+  mayUseHealPlayer();
+  displayRandomMonster();
+
+  // Console log message
+  console.clear();
+  console.log(`You fight: ${currentMonster.name}`);
+  console.log("player health: " + playerHealth);
+  console.log(`${currentMonster.name} Health: ${monsterHealth}`);
+  console.log("current round: " + currentRound);
+  console.log("round counter: " + roundCounter);
+
+  // Message in logContainer
+  clearLog();
+  logMessage(`You fight: ${currentMonster.name}`);
+  logMessage("Player Health: " + playerHealth);
+  logMessage(`${currentMonster.name} Health: ${monsterHealth}`);
+}
+
+/**
  * Puts in a random value for damage or heal
  */
 function getRandomValue(min, max) {
@@ -210,61 +244,12 @@ for (let button of buttons) {
 
       // Start new game
       if (playerChoice === "startNewGame") {
-        playerHealth = 100;
-        monsterHealth = 100;
-        currentRound = 0;
-        roundCounter = 0;
-        winner = null;
-        healthbarValuePlayer.style.width = "100%";
-        healthbarValueMonster.style.width = "100%";
-        mayUseSpecialAttack();
-        mayUseHealPlayer();
-        displayRandomMonster();
-
-        // Console log message
-        console.clear();
-        console.log("New game started");
-        console.log(`You fight: ${currentMonster.name}`);
-        console.log("player health: " + playerHealth);
-        console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-        console.log("current round: " + currentRound);
-        console.log("round counter: " + roundCounter);
-
-        // Message in logContainer
-        clearLog();
-        logMessage(`You fight: ${currentMonster.name}`);
-        logMessage("Player Health: " + playerHealth);
-        logMessage(`${currentMonster.name} Health: ${monsterHealth}`);
+        resetGame();
       }
 
       // Surrender
-      if (playerChoice === "surrender") {
-        playerHealth = 100;
-        monsterHealth = 100;
-        currentRound = 0;
-        roundCounter = 0;
-        winner = null;
-        healthbarValuePlayer.style.width = "100%";
-        healthbarValueMonster.style.width = "100%";
-        mayUseSpecialAttack();
-        mayUseHealPlayer();
-        displayRandomMonster();
-
-        // Console log message
-        console.clear();
-        console.log("You surrendered!");
-        console.log(`You fight: ${currentMonster.name}`);
-        console.log("player health: " + playerHealth);
-        console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-        console.log("current round: " + currentRound);
-        console.log("round counter: " + roundCounter);
-
-        // Message in logContainer
-        clearLog();
-        logMessage("You surrendered!");
-        logMessage(`You fight: ${currentMonster.name}`);
-        logMessage("Player Health: " + playerHealth);
-        logMessage(`${currentMonster.name} Health: ${monsterHealth}`);
+      if (playerChoice === "surrender") {     
+        resetGame();
       }
 
       // player attacks
@@ -295,7 +280,7 @@ for (let button of buttons) {
 
       // Special attack
       if (playerChoice === "specialAttack") {
-        
+
         if (currentRound === 3) {
           let attackValue = getRandomValue(10, 25);
           monsterHealth -= attackValue;
