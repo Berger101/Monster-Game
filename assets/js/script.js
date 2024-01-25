@@ -55,6 +55,30 @@ let monsters = {
       attackPlayer(this, this.attackMin, this.attackMax);
     }
   },
+
+  monster3: {
+    name: 'Ghost',
+    health: 100,
+    image: 'assets/images/ghost.png',
+    attackMin: 7,
+    attackMax: 12,
+
+    performAttack: function() {
+      attackPlayer(this, this.attackMin, this.attackMax);
+    }
+  },
+
+  monster4: {
+    name: 'Vampire',
+    health: 100,
+    image: 'assets/images/vampire.png',
+    attackMin: 8,
+    attackMax: 15,
+
+    performAttack: function() {
+      attackPlayer(this, this.attackMin, this.attackMax);
+    }
+  },
 };
 
 // Select a random monster during initialization
