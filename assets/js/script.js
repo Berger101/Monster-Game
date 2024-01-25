@@ -36,10 +36,10 @@ function resetGame() {
   // Console log message
   console.clear();
   console.log(`You fight: ${currentMonster.name}`);
-  console.log("player health: " + playerHealth);
+  console.log("Player Health: " + playerHealth);
   console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-  console.log("current round: " + currentRound);
-  console.log("round counter: " + roundCounter);
+  console.log("Current Round: " + currentRound);
+  console.log("Round Counter: " + roundCounter);
 
   // Message in logContainer
   clearLog();
@@ -73,9 +73,9 @@ function attackPlayer(monsterObj, attackMin, attackMax) {
 function healMonster(monsterObj, healAmount) {
   monsterHealth += healAmount;
 
-  console.log(`${monsterObj.name} Healed: ${healAmount}`);
+  console.log(`${monsterObj.name} Heal: ${healAmount}`);
 
-  logMessage(`${monsterObj.name} Healed: ${healAmount}`);
+  logMessage(`${monsterObj.name} Heal: ${healAmount}`);
 }
 
 // Creating monsters object
@@ -266,11 +266,11 @@ for (let button of buttons) {
         winGame();
 
         // Console log message
-        console.log("player attack: " + attackValue);
-        console.log("player health: " + playerHealth);
+        console.log("Player Attack: " + attackValue);
+        console.log("Player Health: " + playerHealth);
         console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-        console.log("current round: " + currentRound);
-        console.log("round counter: " + roundCounter);
+        console.log("Current Round: " + currentRound);
+        console.log("Round Counter: " + roundCounter);
 
         // Message in logContainer
         logMessage("Player Attack: " + attackValue);
@@ -294,11 +294,11 @@ for (let button of buttons) {
           winGame();
 
           // Console log message
-          console.log("player Special Attack: " + attackValue);
-          console.log("player health: " + playerHealth);
+          console.log("Player Special Attack: " + attackValue);
+          console.log("Player Health: " + playerHealth);
           console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-          console.log("current round: " + currentRound);
-          console.log("round counter: " + roundCounter);
+          console.log("Current Round: " + currentRound);
+          console.log("Round Counter: " + roundCounter);
 
           // Message in logContainer
           logMessage("Player Special Attack: " + attackValue);
@@ -328,11 +328,11 @@ for (let button of buttons) {
         winGame();
 
         // Console log message
-        console.log("player heal: " + healValue);
-        console.log("player health: " + playerHealth);
+        console.log("Player Heal: " + healValue);
+        console.log("Player Health: " + playerHealth);
         console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-        console.log("current round: " + currentRound);
-        console.log("round counter: " + roundCounter);
+        console.log("Current Round: " + currentRound);
+        console.log("Round Counter: " + roundCounter);
 
         // Message in logContainer
         logMessage("Player Heal: " + healValue);
