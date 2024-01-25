@@ -216,6 +216,9 @@ for (let button of buttons) {
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
         console.log("round counter: " + roundCounter);
+        clearLog();
+        logMessage(`Randomly selected monster: ${currentMonster.name}`);
+        logMessage("Monsters Health: " + monsterHealth);
       }
 
       // Surrender
@@ -237,6 +240,9 @@ for (let button of buttons) {
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
         console.log("round counter: " + roundCounter);
+        clearLog();
+        logMessage(`Randomly selected monster: ${currentMonster.name}`);
+        logMessage("Monsters Health: " + monsterHealth);
       }
 
       // player attacks
