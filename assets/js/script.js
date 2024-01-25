@@ -30,6 +30,9 @@ function attackPlayer(monsterObj, attackMin, attackMax) {
   console.log(`${monsterObj.name} attacked! Player health reduced by: ${attackValue}`);
 }
 
+/**
+ * Function for healing vampire monster everytime monster attacks
+ */
 function healMonster(monsterObj, healAmount) {
   monsterHealth += healAmount;
   console.log(`${monsterObj.name} healed! Monster health increased by: ${healAmount}`);
@@ -84,7 +87,7 @@ let monsters = {
       attackPlayer(this, this.attackMin, this.attackMax);
 
       if (this === currentMonster) {
-        healMonster(this, 2); // Add 2 health points if it's the current monster (monster4)
+        healMonster(this, 2);
       }
     }
   },
