@@ -193,6 +193,7 @@ for (let button of buttons) {
         healthbarValueMonster.style.width = "100%";
         mayUseSpecialAttack();
         mayUseHealPlayer();
+        displayRandomMonster();
         console.clear();
         console.log("New game started");
         console.log("player health: " + playerHealth);
@@ -212,6 +213,7 @@ for (let button of buttons) {
         healthbarValueMonster.style.width = "100%";
         mayUseSpecialAttack();
         mayUseHealPlayer();
+        displayRandomMonster();
         console.clear();
         console.log("You surrendered!");
         console.log("player health: " + playerHealth);
