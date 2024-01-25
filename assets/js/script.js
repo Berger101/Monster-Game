@@ -117,6 +117,9 @@ function displayRandomMonster() {
   // Display details of the selected random monster
   console.log(`Randomly selected monster: ${currentMonster.name}`);
   console.log(`Monster Health: ${currentMonster.health}`);
+
+  logMessage(`Randomly selected monster: ${currentMonster.name}`);
+  logMessage("Monsters Health: " + monsterHealth);
 }
 displayRandomMonster();
 
@@ -208,6 +211,7 @@ for (let button of buttons) {
         displayRandomMonster();
         console.clear();
         console.log("New game started");
+        console.log(`Randomly selected monster: ${currentMonster.name}`);
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
@@ -228,6 +232,7 @@ for (let button of buttons) {
         displayRandomMonster();
         console.clear();
         console.log("You surrendered!");
+        console.log(`Randomly selected monster: ${currentMonster.name}`);
         console.log("player health: " + playerHealth);
         console.log("monster health: " + monsterHealth);
         console.log("current round: " + currentRound);
@@ -300,4 +305,15 @@ for (let button of buttons) {
         console.log("round counter: " + roundCounter);
       }
   });
+}
+
+/**
+ * 
+ */
+function logMessage(message) {
+  
+  const logDiv = document.createElement('div');
+  logDiv.textContent = message;
+
+  document.getElementById('logContainer').appendChild(logDiv);
 }
