@@ -234,6 +234,38 @@ function mayUseHealPlayer() {
 mayUseHealPlayer();
 
 /**
+ * Function for not letting health go under 0 in log message
+ * and displaying health in log message.
+ * To display winning message at the end of log message
+ */
+function checkWinMessage() {
+
+  if (playerHealth <= 0 && monsterHealth <= 0) {
+    playerHealth = 0;
+    monsterHealth = 0;
+
+    logMessage("Player Health: " + playerHealth, "blue");
+    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+  }
+  else if (playerHealth <= 0) {
+    playerHealth = 0;
+    
+    logMessage("Player Health: " + playerHealth, "blue");
+    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+  } 
+  else if (monsterHealth <= 0) {
+    monsterHealth = 0;
+
+    logMessage("Player Health: " + playerHealth, "blue");
+    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+  }
+  else {
+    logMessage("Player Health: " + playerHealth, "blue");
+    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+  }
+}
+
+/**
  * Adding event listener to all the buttons
  */
 for (let button of buttons) {
@@ -272,9 +304,9 @@ for (let button of buttons) {
 
         // Message in logContainer
         logMessage("Player Attack: " + attackValue, "blue");
-        logMessage("Player Health: " + playerHealth, "blue");
-        logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
 
+        checkWinMessage();
+        
         winGame();
       }
 
@@ -301,8 +333,8 @@ for (let button of buttons) {
 
           // Message in logContainer
           logMessage("Player Special Attack: " + attackValue, "purple");
-          logMessage("Player Health: " + playerHealth, "blue");
-          logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+          
+          checkWinMessage();
 
           winGame();
         }
@@ -336,8 +368,8 @@ for (let button of buttons) {
 
         // Message in logContainer
         logMessage("Player Heal: " + healValue, "green");
-        logMessage("Player Health: " + playerHealth, "blue");
-        logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+        
+        checkWinMessage();
 
         winGame();
       }
