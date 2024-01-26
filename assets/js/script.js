@@ -180,6 +180,7 @@ function winGame() {
     healthbarValueMonster.style.width = "0%";
     disable.disabled = true;
     console.log("It's a draw!");
+    logMessage("It's a draw!");
   } 
   else if (playerHealth <= 0) {
     winner = "monster";
@@ -187,6 +188,7 @@ function winGame() {
     healthbarValuePlayer.style.width = "0%";
     disable.disabled = true;
     console.log("Monster wins!");
+    logMessage("Monster wins!");
   }
   else if (monsterHealth <= 0) {
     winner = "player";
@@ -194,6 +196,7 @@ function winGame() {
     healthbarValueMonster.style.width = "0%";
     disable.disabled = true;
     console.log("Player wins!");
+    logMessage("Player wins!");
   }
 }
 winGame();
