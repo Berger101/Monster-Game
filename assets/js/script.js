@@ -82,7 +82,6 @@ function healMonster(monsterObj, healAmount) {
 let monsters = {
   monster1: {
     name: 'Big Monster',
-    health: 100,
     image: 'assets/images/monster.png',
     attackMin: 8,
     attackMax: 15,
@@ -94,7 +93,6 @@ let monsters = {
 
   monster2: {
     name: 'Fire Demon',
-    health: 80,
     image: 'assets/images/firedemon.png',
     attackMin: 11,
     attackMax: 17,
@@ -106,7 +104,6 @@ let monsters = {
 
   monster3: {
     name: 'Ghost',
-    health: 100,
     image: 'assets/images/ghost.png',
     attackMin: 7,
     attackMax: 12,
@@ -118,7 +115,6 @@ let monsters = {
 
   monster4: {
     name: 'Vampire',
-    health: 100,
     image: 'assets/images/vampire.png',
     attackMin: 10,
     attackMax: 13,
