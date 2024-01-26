@@ -262,7 +262,6 @@ for (let button of buttons) {
         roundCounter++;
         mayUseSpecialAttack();
         mayUseHealPlayer();
-        winGame();
 
         // Console log message
         console.log("Player Attack: " + attackValue);
@@ -275,6 +274,8 @@ for (let button of buttons) {
         logMessage("Player Attack: " + attackValue, "blue");
         logMessage("Player Health: " + playerHealth, "blue");
         logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+
+        winGame();
       }
 
       // Special attack
@@ -290,7 +291,6 @@ for (let button of buttons) {
           roundCounter++;
           mayUseSpecialAttack();
           mayUseHealPlayer();
-          winGame();
 
           // Console log message
           console.log("Player Special Attack: " + attackValue);
@@ -303,6 +303,8 @@ for (let button of buttons) {
           logMessage("Player Special Attack: " + attackValue, "purple");
           logMessage("Player Health: " + playerHealth, "blue");
           logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+
+          winGame();
         }
       }
 
@@ -324,7 +326,6 @@ for (let button of buttons) {
         roundCounter = 0;
         mayUseSpecialAttack();
         mayUseHealPlayer();
-        winGame();
 
         // Console log message
         console.log("Player Heal: " + healValue);
@@ -337,6 +338,8 @@ for (let button of buttons) {
         logMessage("Player Heal: " + healValue, "green");
         logMessage("Player Health: " + playerHealth, "blue");
         logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+
+        winGame();
       }
   });
 }
