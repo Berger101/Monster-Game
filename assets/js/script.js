@@ -44,8 +44,8 @@ function resetGame() {
   // Message in logContainer
   clearLog();
   logMessage(`You fight: ${currentMonster.name}`);
-  logMessage("Player Health: " + playerHealth);
-  logMessage(`${currentMonster.name} Health: ${monsterHealth}`);
+  logMessage("Player Health: " + playerHealth, "blue");
+  logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
 }
 
 /**
@@ -64,7 +64,7 @@ function attackPlayer(monsterObj, attackMin, attackMax) {
 
   console.log(`${monsterObj.name} Attacked: ${attackValue}`);
 
-  logMessage(`${monsterObj.name} Attacked: ${attackValue}`);
+  logMessage(`${monsterObj.name} Attacked: ${attackValue}`, "red");
 }
 
 /**
@@ -75,7 +75,7 @@ function healMonster(monsterObj, healAmount) {
 
   console.log(`${monsterObj.name} Heal: ${healAmount}`);
 
-  logMessage(`${monsterObj.name} Heal: ${healAmount}`);
+  logMessage(`${monsterObj.name} Heal: ${healAmount}`, "red");
 }
 
 // Creating monsters object
@@ -159,8 +159,8 @@ function displayRandomMonster() {
   
   // Message in logContainer
   logMessage(`You fight: ${currentMonster.name}`);
-  logMessage("Player Health: " + playerHealth);
-  logMessage(`${currentMonster.name} Health: ${monsterHealth}`);
+  logMessage("Player Health: " + playerHealth, "blue");
+  logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
 }
 displayRandomMonster();
 
@@ -184,7 +184,7 @@ function winGame() {
     healthbarValuePlayer.style.width = "0%";
     disable.disabled = true;
     console.log("Monster wins!");
-    logMessage("Monster wins!");
+    logMessage("Monster wins!", "red");
   }
   else if (monsterHealth <= 0) {
     winner = "player";
@@ -192,7 +192,7 @@ function winGame() {
     healthbarValueMonster.style.width = "0%";
     disable.disabled = true;
     console.log("Player wins!");
-    logMessage("Player wins!");
+    logMessage("Player wins!", "blue");
   }
 }
 winGame();
@@ -272,9 +272,9 @@ for (let button of buttons) {
         console.log("Round Counter: " + roundCounter);
 
         // Message in logContainer
-        logMessage("Player Attack: " + attackValue);
-        logMessage("Player Health: " + playerHealth);
-        logMessage(`${currentMonster.name} Health: ${monsterHealth}`);
+        logMessage("Player Attack: " + attackValue, "blue");
+        logMessage("Player Health: " + playerHealth, "blue");
+        logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
       }
 
       // Special attack
@@ -300,9 +300,9 @@ for (let button of buttons) {
           console.log("Round Counter: " + roundCounter);
 
           // Message in logContainer
-          logMessage("Player Special Attack: " + attackValue);
-          logMessage("Player Health: " + playerHealth);
-          logMessage(`${currentMonster.name} Health: ${monsterHealth}`);
+          logMessage("Player Special Attack: " + attackValue, "purple");
+          logMessage("Player Health: " + playerHealth, "blue");
+          logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
         }
       }
 
@@ -334,9 +334,9 @@ for (let button of buttons) {
         console.log("Round Counter: " + roundCounter);
 
         // Message in logContainer
-        logMessage("Player Heal: " + healValue);
-        logMessage("Player Health: " + playerHealth);
-        logMessage(`${currentMonster.name} Health: ${monsterHealth}`);
+        logMessage("Player Heal: " + healValue, "green");
+        logMessage("Player Health: " + playerHealth, "blue");
+        logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
       }
   });
 }
@@ -344,10 +344,12 @@ for (let button of buttons) {
 /**
  * Function for logging the message to the browser
  */
-function logMessage(message) {
+function logMessage(message, color) {
   
   const logDiv = document.createElement('div');
+
   logDiv.textContent = message;
+  logDiv.style.color = color || 'black';
 
   document.getElementById('logContainer').appendChild(logDiv);
 }
