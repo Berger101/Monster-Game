@@ -34,14 +34,6 @@ function resetGame() {
   mayUseHealPlayer();
   displayRandomMonster();
 
-  // Console log message
-  console.clear();
-  console.log(`You fight: ${currentMonster.name}`);
-  console.log("Player Health: " + playerHealth);
-  console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-  console.log("Current Round: " + currentRound);
-  console.log("Round Counter: " + roundCounter);
-
   // Message in logContainer
   clearLog();
   logMessage(`You fight: ${currentMonster.name}`);
@@ -61,8 +53,6 @@ const attackPlayer = (monsterObj, attackMin, attackMax) => {
   let attackValue = getRandomValue(attackMin, attackMax);
   playerHealth -= attackValue;
 
-  console.log(`${monsterObj.name} Attacked: ${attackValue}`);
-
   logMessage(`${monsterObj.name} Attacked: ${attackValue}`, "red");
 };
 
@@ -71,8 +61,6 @@ const attackPlayer = (monsterObj, attackMin, attackMax) => {
  */
 const healMonster = (monsterObj, healAmount) => {
   monsterHealth += healAmount;
-
-  console.log(`${monsterObj.name} Heal: ${healAmount}`);
 
   logMessage(`${monsterObj.name} Heal: ${healAmount}`, "red");
 };
@@ -156,13 +144,6 @@ function displayRandomMonster() {
   // Display details of the selected random monster
   document.getElementById('monsterName').textContent = `${currentMonster.name}`;
   document.getElementById('monsterImage').src = currentMonster.image;
-
-  // Console log message
-  console.log(`You fight: ${currentMonster.name}`);
-  console.log("Player Health: " + playerHealth);
-  console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-  console.log("current round: " + currentRound);
-  console.log("round counter: " + roundCounter);
   
   // Message in logContainer
   logMessage(`You fight: ${currentMonster.name}`);
@@ -187,7 +168,6 @@ function winGame() {
       disable[i].disabled = true;
     }
 
-    console.log("It's a draw!");
     logMessage("It's a draw!");
   } 
   else if (playerHealth <= 0) {
@@ -200,7 +180,6 @@ function winGame() {
       disable[i].disabled = true;
     }
 
-    console.log("Monster wins!");
     logMessage("Monster wins!", "red");
   }
   else if (monsterHealth <= 0) {
@@ -213,7 +192,6 @@ function winGame() {
       disable[i].disabled = true;
     }
 
-    console.log("Player wins!");
     logMessage("Player wins!", "blue");
   }
 }
@@ -329,13 +307,6 @@ function playerAttack() {
     mayUseSpecialAttack();
     mayUseHealPlayer();
 
-    // Console log message
-    console.log("Player Attack: " + attackValue);
-    console.log("Player Health: " + playerHealth);
-    console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-    console.log("Current Round: " + currentRound);
-    console.log("Round Counter: " + roundCounter);
-
     // Message in logContainer
     logMessage("Player Attack: " + attackValue, "blue");
 
@@ -362,13 +333,6 @@ function playerSpecialAttack() {
     roundCounter++;
     mayUseSpecialAttack();
     mayUseHealPlayer();
-
-    // Console log message
-    console.log("Player Special Attack: " + attackValue);
-    console.log("Player Health: " + playerHealth);
-    console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-    console.log("Current Round: " + currentRound);
-    console.log("Round Counter: " + roundCounter);
 
     // Message in logContainer
     logMessage("Player Special Attack: " + attackValue, "purple");
@@ -402,13 +366,6 @@ function playerHeal() {
     mayUseSpecialAttack();
     mayUseHealPlayer();
 
-    // Console log message
-    console.log("Player Heal: " + healValue);
-    console.log("Player Health: " + playerHealth);
-    console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-    console.log("Current Round: " + currentRound);
-    console.log("Round Counter: " + roundCounter);
-
     // Message in logContainer
     logMessage("Player Heal: " + healValue, "green");
     
@@ -424,7 +381,6 @@ function playerHeal() {
 for (let button of buttons) {
   button.addEventListener("click", function () {
     let playerChoice = this.getAttribute("data-choice");
-    console.log(playerChoice);
     
     // Switch statement for calling on event listener and it's functions used
     switch (playerChoice) {
