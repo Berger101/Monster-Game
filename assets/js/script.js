@@ -292,6 +292,12 @@ for (let button of buttons) {
 
       // Start new game
       if (playerChoice === "startNewGame") {
+
+        // Loop through and enable all the buttons
+        for (let i = 0; i < disable.length; i++) {
+          disable[i].disabled = false;
+        }
+
         resetGame();
       }
 
