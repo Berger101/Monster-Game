@@ -14,6 +14,7 @@ let currentRound = 0;
 let roundCounter = 0;
 let winner = null;
 
+// Score tracker
 /**
  * Function for starting a new game
  */
@@ -50,14 +51,14 @@ function resetGame() {
 
 /**
  * Puts in a random value for damage or heal
- */
+ */ // arrow function
 function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
 /**
  * Function for attacking the player each time an action is made
- */
+ */ // arrow function
 function attackPlayer(monsterObj, attackMin, attackMax) {
   let attackValue = getRandomValue(attackMin, attackMax);
   playerHealth -= attackValue;
@@ -69,7 +70,7 @@ function attackPlayer(monsterObj, attackMin, attackMax) {
 
 /**
  * Function for healing vampire monster everytime monster attacks
- */
+ */ // arrow function
 function healMonster(monsterObj, healAmount) {
   monsterHealth += healAmount;
 
@@ -137,6 +138,7 @@ let currentMonster;
  */
 function displayRandomMonster() {
   // Select a random monster when browser loads
+  // try catch
   const monsterKeys = Object.keys(monsters);
   const randomMonsterKey = monsterKeys[Math.floor(Math.random() * monsterKeys.length)];
   currentMonster = monsters[randomMonsterKey];
@@ -166,7 +168,7 @@ displayRandomMonster();
 
 /**
  * Function for who wins the game
- */
+ */ // try catch
 function winGame() {
   if (playerHealth <= 0 && monsterHealth <= 0) {
     winner = "draw";
@@ -174,7 +176,12 @@ function winGame() {
     monsterHealth = 0;
     healthbarValuePlayer.style.width = "0%";
     healthbarValueMonster.style.width = "0%";
-    disable.disabled = true;
+
+    // Loop through and disable all the buttons
+    for (let i = 0; i < disable.length; i++) {
+      disable[i].disabled = true;
+    }
+
     console.log("It's a draw!");
     logMessage("It's a draw!");
   } 
@@ -182,7 +189,12 @@ function winGame() {
     winner = "monster";
     playerHealth = 0;
     healthbarValuePlayer.style.width = "0%";
-    disable.disabled = true;
+
+    // Loop through and disable all the buttons
+    for (let i = 0; i < disable.length; i++) {
+      disable[i].disabled = true;
+    }
+
     console.log("Monster wins!");
     logMessage("Monster wins!", "red");
   }
@@ -190,7 +202,12 @@ function winGame() {
     winner = "player";
     monsterHealth = 0;
     healthbarValueMonster.style.width = "0%";
-    disable.disabled = true;
+
+    // Loop through and disable all the buttons
+    for (let i = 0; i < disable.length; i++) {
+      disable[i].disabled = true;
+    }
+
     console.log("Player wins!");
     logMessage("Player wins!", "blue");
   }
@@ -267,7 +284,7 @@ function checkWinMessage() {
 
 /**
  * Adding event listener to all the buttons
- */
+ */ // try catch
 for (let button of buttons) {
   button.addEventListener("click", function () {
     let playerChoice = this.getAttribute("data-choice");
@@ -350,7 +367,7 @@ for (let button of buttons) {
           healthbarValueMonster.style.width = "100%";
         } else {
           playerHealth += healValue;
-        }
+        } //iternary operator, simpel function // arrow function
         currentMonster.performAttack();
         healthbarValuePlayer.style.width = playerHealth + "%";
         healthbarValueMonster.style.width = monsterHealth + "%";
