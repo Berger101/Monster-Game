@@ -287,119 +287,137 @@ function checkWinMessage() {
   }
 }
 
-
-for (let button of buttons) {
-  button.addEventListener("click", function () {
-    let playerChoice = this.getAttribute("data-choice");
-
-    function startNewGame() {
-      try {
-        // Loop through and enable all the buttons
-        for (let i = 0; i < disable.length; i++) {
-          disable[i].disabled = false;
-        }
-    
-        resetGame();
-      } catch (error) {
-        console.error("An error occurred during the 'startNewGame' function:", error);
-      }
+/**
+ * Function for starting a new game
+ */
+function startNewGame() {
+  try {
+    // Loop through and enable all the buttons
+    for (let i = 0; i < disable.length; i++) {
+      disable[i].disabled = false;
     }
 
-      // Surrender
-      if (playerChoice === "surrender") {     
-        resetGame();
-      }
+    resetGame();
+  } catch (error) {
+    console.error("An error occurred during the 'startNewGame' function:", error);
+  }
+}
 
-      // player attacks
-      if (playerChoice === "attackMonster") {
-        let attackValue = getRandomValue(5, 12);
-        monsterHealth -= attackValue;
-        currentMonster.performAttack();
-        healthbarValuePlayer.style.width = playerHealth + "%";
-        healthbarValueMonster.style.width = monsterHealth + "%";
-        currentRound++;
-        roundCounter++;
-        mayUseSpecialAttack();
-        mayUseHealPlayer();
+/**
+ * Function for surrender
+ */
+function surrender() {
+  try {
+    resetGame();
+  } catch (error) {
+    console.error("An error occurred during the 'surrender' function:", error);
+  }
+}
 
-        // Console log message
-        console.log("Player Attack: " + attackValue);
-        console.log("Player Health: " + playerHealth);
-        console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-        console.log("Current Round: " + currentRound);
-        console.log("Round Counter: " + roundCounter);
+/**
+ * Function for when player attacks
+ */
+function playerAttack() {
+  try {
+    let attackValue = getRandomValue(5, 12);
+    monsterHealth -= attackValue;
+    currentMonster.performAttack();
+    healthbarValuePlayer.style.width = playerHealth + "%";
+    healthbarValueMonster.style.width = monsterHealth + "%";
+    currentRound++;
+    roundCounter++;
+    mayUseSpecialAttack();
+    mayUseHealPlayer();
 
-        // Message in logContainer
-        logMessage("Player Attack: " + attackValue, "blue");
+    // Console log message
+    console.log("Player Attack: " + attackValue);
+    console.log("Player Health: " + playerHealth);
+    console.log(`${currentMonster.name} Health: ${monsterHealth}`);
+    console.log("Current Round: " + currentRound);
+    console.log("Round Counter: " + roundCounter);
 
-        checkWinMessage();
-        
-        winGame();
-      }
+    // Message in logContainer
+    logMessage("Player Attack: " + attackValue, "blue");
 
-      // Special attack
-      if (playerChoice === "specialAttack") {
+    checkWinMessage();
 
-        if (currentRound === 3) {
-          let attackValue = getRandomValue(10, 25);
-          monsterHealth -= attackValue;
-          currentMonster.performAttack();
-          healthbarValuePlayer.style.width = playerHealth + "%";
-          healthbarValueMonster.style.width = monsterHealth + "%";
-          currentRound = 0;
-          roundCounter++;
-          mayUseSpecialAttack();
-          mayUseHealPlayer();
+    winGame();
+  } catch (error) {
+    console.error("An error occurred during the 'playerAttack' function:", error);
+  }
+}
 
-          // Console log message
-          console.log("Player Special Attack: " + attackValue);
-          console.log("Player Health: " + playerHealth);
-          console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-          console.log("Current Round: " + currentRound);
-          console.log("Round Counter: " + roundCounter);
+/**
+ * Function for when player use special attack
+ */
+function playerSpecialAttack() {
 
-          // Message in logContainer
-          logMessage("Player Special Attack: " + attackValue, "purple");
-          
-          checkWinMessage();
+  try {
+    let attackValue = getRandomValue(10, 25);
+    monsterHealth -= attackValue;
+    currentMonster.performAttack();
+    healthbarValuePlayer.style.width = playerHealth + "%";
+    healthbarValueMonster.style.width = monsterHealth + "%";
+    currentRound = 0;
+    roundCounter++;
+    mayUseSpecialAttack();
+    mayUseHealPlayer();
 
-          winGame();
-        }
-      }
+    // Console log message
+    console.log("Player Special Attack: " + attackValue);
+    console.log("Player Health: " + playerHealth);
+    console.log(`${currentMonster.name} Health: ${monsterHealth}`);
+    console.log("Current Round: " + currentRound);
+    console.log("Round Counter: " + roundCounter);
 
-      // Heal player
-      if (playerChoice === "healPlayer") {
+    // Message in logContainer
+    logMessage("Player Special Attack: " + attackValue, "purple");
+    
+    checkWinMessage();
 
-        let healValue = getRandomValue(8, 20);
-        
-        // Ternary operator, simpel function // arrow function
-        playerHealth = (playerHealth + healValue >= 100)
-        ? (healthbarValueMonster.style.width = "100%", 100)
-        : (playerHealth + healValue);
-        
-        currentMonster.performAttack();
-        healthbarValuePlayer.style.width = playerHealth + "%";
-        healthbarValueMonster.style.width = monsterHealth + "%";
-        currentRound++;
-        roundCounter = 0;
-        mayUseSpecialAttack();
-        mayUseHealPlayer();
+    winGame();
+  } catch (error) {
+    console.error("An error occurred during the 'playerSpecialAttack' function:", error);
+  }
+}
 
-        // Console log message
-        console.log("Player Heal: " + healValue);
-        console.log("Player Health: " + playerHealth);
-        console.log(`${currentMonster.name} Health: ${monsterHealth}`);
-        console.log("Current Round: " + currentRound);
-        console.log("Round Counter: " + roundCounter);
+/**
+ * Function for when player heal
+ */
+function playerHeal() {
 
-        // Message in logContainer
-        logMessage("Player Heal: " + healValue, "green");
-        
-        checkWinMessage();
+  try {
+    let healValue = getRandomValue(8, 20);
+    
+    // Ternary operator, simpel function // arrow function
+    playerHealth = (playerHealth + healValue >= 100)
+    ? (healthbarValueMonster.style.width = "100%", 100)
+    : (playerHealth + healValue);
+    
+    currentMonster.performAttack();
+    healthbarValuePlayer.style.width = playerHealth + "%";
+    healthbarValueMonster.style.width = monsterHealth + "%";
+    currentRound++;
+    roundCounter = 0;
+    mayUseSpecialAttack();
+    mayUseHealPlayer();
 
-        winGame();
-      }
-  });
+    // Console log message
+    console.log("Player Heal: " + healValue);
+    console.log("Player Health: " + playerHealth);
+    console.log(`${currentMonster.name} Health: ${monsterHealth}`);
+    console.log("Current Round: " + currentRound);
+    console.log("Round Counter: " + roundCounter);
+
+    // Message in logContainer
+    logMessage("Player Heal: " + healValue, "green");
+    
+    checkWinMessage();
+
+    winGame();
+  } catch (error) {
+    console.error("An error occurred during the 'playerHeal' function:", error);
+  }
 }
 
 // Adding event listeners to all the buttons
@@ -408,7 +426,7 @@ for (let button of buttons) {
     let playerChoice = this.getAttribute("data-choice");
     console.log(playerChoice);
     
-    // Switch statement for calling on clicks and it's function
+    // Switch statement for calling on event listener and it's functions used
     switch (playerChoice) {
       case "startNewGame":
         startNewGame();
@@ -418,6 +436,12 @@ for (let button of buttons) {
         break;
       case "attackMonster":
         playerAttack();
+        break;
+      case "specialAttack":
+        playerSpecialAttack();
+        break;
+      case "healPlayer":
+        playerHeal();
         break;
       default:
         console.warn("Unhandled playerChoice:", playerChoice);
