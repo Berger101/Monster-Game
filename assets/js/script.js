@@ -136,10 +136,17 @@ let currentMonster;
  */
 function displayRandomMonster() {
   // Select a random monster when browser loads
-  // try catch
-  const monsterKeys = Object.keys(monsters);
-  const randomMonsterKey = monsterKeys[Math.floor(Math.random() * monsterKeys.length)];
-  currentMonster = monsters[randomMonsterKey];
+  // try-catch block to handle errors
+  try {
+    const monsterKeys = Object.keys(monsters);
+    const randomMonsterKey = monsterKeys[Math.floor(Math.random() * monsterKeys.length)];
+    currentMonster = monsters[randomMonsterKey];
+  } catch (error) {
+    console.error("An error occurred while selecting a random monster:", error);
+
+    // Set currentMonster to null in case of an error
+    currentMonster = null;
+  }
 
   // Ternary operator for fire demon monsters health
   (currentMonster === monsters.monster2)
