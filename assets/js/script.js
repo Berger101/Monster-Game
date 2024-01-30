@@ -14,7 +14,6 @@ let currentRound = 0;
 let roundCounter = 0;
 let winner = null;
 
-// Score tracker
 /**
  * Function for starting a new game
  */
