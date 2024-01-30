@@ -50,11 +50,9 @@ function resetGame() {
 }
 
 /**
- * Puts in a random value for damage or heal
- */ // arrow function
-function getRandomValue(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+ * Arrow function that puts in a random value for damage or heal
+ */
+const getRandomValue = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 /**
  * Function for attacking the player each time an action is made
