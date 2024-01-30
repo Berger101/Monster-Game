@@ -67,8 +67,8 @@ const attackPlayer = (monsterObj, attackMin, attackMax) => {
 };
 
 /**
- * Function for healing vampire monster everytime monster attacks
- */ // arrow function
+ * Arrow function for healing vampire monster everytime monster attacks
+ */
 const healMonster = (monsterObj, healAmount) => {
   monsterHealth += healAmount;
 
