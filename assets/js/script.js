@@ -115,8 +115,8 @@ let monsters = {
   monster4: {
     name: 'Vampire',
     image: 'assets/images/vampire.png',
-    attackMin: 10,
-    attackMax: 13,
+    attackMin: 8,
+    attackMax: 12,
 
     performAttack: function() {
       attackPlayer(this, this.attackMin, this.attackMax);
