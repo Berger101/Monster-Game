@@ -55,16 +55,16 @@ function resetGame() {
 const getRandomValue = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 /**
- * Function for attacking the player each time an action is made
- */ // arrow function
-function attackPlayer(monsterObj, attackMin, attackMax) {
+ * Arrow function for attacking the player each time an action is made
+ */
+const attackPlayer = (monsterObj, attackMin, attackMax) => {
   let attackValue = getRandomValue(attackMin, attackMax);
   playerHealth -= attackValue;
 
   console.log(`${monsterObj.name} Attacked: ${attackValue}`);
 
   logMessage(`${monsterObj.name} Attacked: ${attackValue}`, "red");
-}
+};
 
 /**
  * Function for healing vampire monster everytime monster attacks
