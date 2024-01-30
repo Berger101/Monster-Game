@@ -367,13 +367,12 @@ for (let button of buttons) {
       if (playerChoice === "healPlayer") {
 
         let healValue = getRandomValue(8, 20);
-
-        if (playerHealth + healValue >= 100) {
-          playerHealth = 100;
-          healthbarValueMonster.style.width = "100%";
-        } else {
-          playerHealth += healValue;
-        } //iternary operator, simpel function // arrow function
+        
+        // Ternary operator, simpel function // arrow function
+        playerHealth = (playerHealth + healValue >= 100)
+        ? (healthbarValueMonster.style.width = "100%", 100)
+        : (playerHealth + healValue);
+        
         currentMonster.performAttack();
         healthbarValuePlayer.style.width = playerHealth + "%";
         healthbarValueMonster.style.width = monsterHealth + "%";
