@@ -141,10 +141,10 @@ function displayRandomMonster() {
   const randomMonsterKey = monsterKeys[Math.floor(Math.random() * monsterKeys.length)];
   currentMonster = monsters[randomMonsterKey];
 
-  if (currentMonster === monsters.monster2) {
-    monsterHealth = 80;
-    healthbarValueMonster.style.width = "80%";
-  }
+  // Ternary operator for fire demon monsters health
+  (currentMonster === monsters.monster2)
+  ? (monsterHealth = 80, healthbarValueMonster.style.width = "80%")
+  : null;
   
   // Display details of the selected random monster
   document.getElementById('monsterName').textContent = `${currentMonster.name}`;
