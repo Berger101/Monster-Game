@@ -173,7 +173,7 @@ displayRandomMonster();
 
 /**
  * Function for who wins the game
- */ // try catch
+ */
 function winGame() {
   if (playerHealth <= 0 && monsterHealth <= 0) {
     winner = "draw";
@@ -287,24 +287,23 @@ function checkWinMessage() {
   }
 }
 
-/**
- * Adding event listener to all the buttons
- */ // try catch
+
 for (let button of buttons) {
   button.addEventListener("click", function () {
     let playerChoice = this.getAttribute("data-choice");
-    console.log(playerChoice);
 
-      // Start new game
-      if (playerChoice === "startNewGame") {
-
+    function startNewGame() {
+      try {
         // Loop through and enable all the buttons
         for (let i = 0; i < disable.length; i++) {
           disable[i].disabled = false;
         }
-
+    
         resetGame();
+      } catch (error) {
+        console.error("An error occurred during the 'startNewGame' function:", error);
       }
+    }
 
       // Surrender
       if (playerChoice === "surrender") {     
@@ -400,6 +399,29 @@ for (let button of buttons) {
 
         winGame();
       }
+  });
+}
+
+// Adding event listeners to all the buttons
+for (let button of buttons) {
+  button.addEventListener("click", function () {
+    let playerChoice = this.getAttribute("data-choice");
+    console.log(playerChoice);
+    
+    // Switch statement for calling on clicks and it's function
+    switch (playerChoice) {
+      case "startNewGame":
+        startNewGame();
+        break;
+      case "surrender":
+        surrender();
+        break;
+      case "attackMonster":
+        playerAttack();
+        break;
+      default:
+        console.warn("Unhandled playerChoice:", playerChoice);
+    }
   });
 }
 
