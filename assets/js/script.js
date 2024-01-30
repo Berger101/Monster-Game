@@ -69,13 +69,13 @@ const attackPlayer = (monsterObj, attackMin, attackMax) => {
 /**
  * Function for healing vampire monster everytime monster attacks
  */ // arrow function
-function healMonster(monsterObj, healAmount) {
+const healMonster = (monsterObj, healAmount) => {
   monsterHealth += healAmount;
 
   console.log(`${monsterObj.name} Heal: ${healAmount}`);
 
   logMessage(`${monsterObj.name} Heal: ${healAmount}`, "red");
-}
+};
 
 // Creating monsters object
 let monsters = {
