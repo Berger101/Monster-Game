@@ -45,6 +45,15 @@ Game Options
 </ul>
 <img src="assets/images/buttons.png">
 
+
+Log Messages
+<ul>
+  <li>The game generates log messages to provide real-time updates and information about the ongoing battle. These messages are displayed in the log container within the game interface.</li>
+  <li>Log messages offer immediate feedback on player actions, such as attacks, special attacks, healing, and more. Players can see the impact of their decisions on the game state.</li>
+  <li>Log messages are color-coded to improve readability and categorize different types of actions. For example, blue messages represent the player and the player attacks, green messages represent healing actions, purple messages represent special attack actions, and red messages represent the monster.</li>
+</ul>
+<img src="assets/images/logmessage.png">
+
 Monsters
 <ul>
   <b>Big Monster:</b>
@@ -55,6 +64,26 @@ Monsters
   <li>The Ghost is a spectral entity with the ability to phase in and out of the physical realm. It possesses ethereal attacks that may bypass traditional defenses. Engaging with a Ghost requires a keen understanding of its supernatural abilities, and players might need specific tools or skills to combat this elusive and haunting adversary.</li>
   <b>Vampire:</b>
   <li>The Vampire is a cunning and immortal creature that feeds on the life force of its victims. It has the ability to regenerate health during battle, making it a challenging opponent. Players should consider employing tactics that disrupt the Vampire's life-draining abilities and exploit its weaknesses to ensure success in the fight.</li>
+</ul>
+
+## Refactoring
+
+<ul>
+  <li>After building the monster slaying game project, I decided to look how to make the code more clean and shorten the length of some repetitive code.</li>
+  <li>I remade some functions into arrow functions.</li>
+  <li>I refactored some if-else statements into ternary operators.</li>
+  <li>I made my click event listener into switch case and functions instead of one big pile of code.</li>
+  <li>I took away repetitive code and made it into functions to be reused several times.</li>
+</ul>
+
+## Testing
+
+<ul>
+  <li>I tested that this page works in different browsers: Chrome, Firefox, Safari.</li>
+  <li>I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.</li>
+  <li>I confirmed that all the buttons work and does the correct function.</li>
+  <li>I confirmed that the messages in the log container are the correct values.</li>
+  <li>I confirmed that the instructions and options are readable and easy to understand.</li>
 </ul>
 
 ## Validator Testing
@@ -76,6 +105,13 @@ Accessibility
   <li>I confirmed that the colors and fonts chosen are easy to read and accessible by running it through the official <a href="https://pagespeed.web.dev/">lighthouse (PageSpeed) validator</a>.</li>
 </ul>
 <img src="assets/images/lighthouse.png">
+
+JSHint
+<ul>
+  <li>I confirmed there were no necessary warnings found when passing through the official <a href="https://jshint.com/">JSHint validator</a>.</li>
+  <li>Warnings found in jshint is because of the prettier extension in VS Code and choosen not to be changed.</li>
+</ul>
+<img src="assets/images/validatorjshint.png">
 
 ## Deployment
 
