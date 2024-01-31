@@ -119,6 +119,12 @@ JSHint
 
 ## Deployment
 
+<b>Prerequisites</b>, make sure you have the following prerequisites installed on your machine:
+<ul>
+  <li>Web Browser - We recommend using Google Chrome for the best experience.</li>
+  <li>Any modern code editor, such as Visual Studio Code.</li>
+</ul>
+
 The site was deployed to GitHub pages. The steps to deploy are as follows:
 <ul>
   <li>In the GitHub repository, navigate to the Settings tab</li>
@@ -126,6 +132,31 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
   <li>Once the main branch has been selected, the page provided the link to the completed website</li>
 </ul>
 The live link can be found here - <a href="https://berger101.github.io/Monster-Game/">Monster Game</a>
+
+## Local Deployment
+Follow these steps to deploy the Monster Slaying Game on your local machine.
+
+<ul>
+  <b>Clone the Repository</b>
+  <li>Open a terminal and run the following command to clone the project repository:</li>
+
+```console
+git clone https://github.com/your-username/monster-game.git
+```
+
+  <li>Replace your-username with your GitHub username.</li>
+  <b>Navigate to the Project Directory</b>
+  <li>Change into the project directory by running the following command in your terminal:</li>
+
+```console
+cd monster-game
+```
+
+  <b>Open the Game</b>
+  <li>Open the index.html file in your preferred web browser. You can do this by double-clicking the file or right-clicking and choosing "Open with" your browser.</li>
+  <b>Enjoy the Game</b>
+  <li>You are now ready to enjoy the Monster Slaying Game on your local machine! Feel free to explore the game interface, battle monsters, and test different strategies.</li>
+</ul>
 
 ## Credits
 
