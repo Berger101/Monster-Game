@@ -1,10 +1,17 @@
 # Monster Game
 
-Welcome to the <a href="https://berger101.github.io/Monster-Game/">Monster Slaying Game</a>, an exciting text-based adventure where you, the player, embark on a journey to defeat monstrous creatures and try your best luck to emerge victorious! It features four totally random monsters with different unique abilities, all ready to face and defeat the users character.
+Welcome to the <a href="https://berger101.github.io/Monster-Game/">Monster Slaying Game</a>, an exciting text-based adventure where you, the player, embark on a journey to defeat monstrous creatures and try your best luck to emerge victorious! It features four totally chosen random monsters with different unique abilities, all ready to face and utterly defeat the users character to steal your glory and fame.
 
 <img src="assets/images/amiresponsive.png">
 
-## Features
+## Game Features
+
+<ul>
+  <li>Four randomly chosen monsters with unique abilities.</li>
+  <li>Dynamic Health Bars: Visualize your health and the monster's health with dynamic health bars.</li>
+  <li>Log Messages: Receive real-time updates and battle logs in the message container.</li>
+  <li>Game Over: The game ends in a draw or when either you or the monster is defeated.</li>
+</ul>
 
 Header
 <ul> 
@@ -25,11 +32,16 @@ Game Area
 Game Options
 <ul> 
   <li>The game options section have five different buttons, attack, special attack, heal, surrender and start new game.</li>
-  <li>Everytime a button is clicked (except for a new game button) the monster will take it's turn and attack the player, damaging the players healthbar.</li>
-  <li>The attack button will attack the monster depending on a random value.</li>
-  <li>The special attack button will attack the monster depending on a random value, this value is higher than a normal attack. This action is only available every third round.</li>
-  <li>The heal button will heal the player depending on a random value, this value will increase the players healthbar. This action is only available every second round.</li>
-  <li>The surrender button will end and reset the game to default.</li>
-  <li>The start new game button will end and reset the game to default.</li>
+  <li>Everytime an action is made the monster will take it's turn and attack the player, damaging the players healthbar. Beware the monsters hit hard, so choose your next move with care.</li>
+  <b>Attack the Monster:</b>
+  <li>Click the "Attack" button to unleash a standard attack on the monster. Keep an eye on your health and the monster's health as you battle through rounds.</li>
+  <b>Special Attack:</b>
+  <li>After every three rounds, you can use a powerful "Special Attack" to deal extra damage to the monster. Plan strategically to maximize your impact!</li>
+  <b>Heal Yourself:</b>
+  <li>Click the "Heal" button to restore some of your health. Be cautious, as excessive healing might lead to a draw or even defeat if the monster is too powerful. This action is only available every second round.</li>
+  <b>Surrender:</b>
+  <li>If the odds seem insurmountable, you can choose to surrender and end the game. All buttons will be enabled, and the game will reset.</li>
+  <b>Start a New Game:</b>
+  <li>Click the "Start New Game" button to initiate a new adventure. All buttons will be enabled, and the game will reset.</li>
 </ul>
 <img src="assets/images/buttons.png">
