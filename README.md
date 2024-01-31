@@ -85,7 +85,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
   <li>From the Source section drop-down menu, select the Main Branch</li>
   <li>Once the main branch has been selected, the page provided the link to the completed website</li>
 </ul>
-The live link can be found here - <a href="https://berger101.github.io/Monster-Game/">Love Coding</a>
+The live link can be found here - <a href="https://berger101.github.io/Monster-Game/">Monster Game</a>
 
 ## Credits
 
