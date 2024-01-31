@@ -37,7 +37,7 @@ function resetGame() {
   clearLog();
   logMessage(`You fight: ${currentMonster.name}`);
   logMessage("Player Health: " + playerHealth, "blue");
-  logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+  logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "#e60000");
 }
 
 /**
@@ -52,7 +52,7 @@ const attackPlayer = (monsterObj, attackMin, attackMax) => {
   let attackValue = getRandomValue(attackMin, attackMax);
   playerHealth -= attackValue;
 
-  logMessage(`${monsterObj.name} Attacked: ${attackValue}`, "red");
+  logMessage(`${monsterObj.name} Attacked: ${attackValue}`, "#e60000");
 };
 
 /**
@@ -61,7 +61,7 @@ const attackPlayer = (monsterObj, attackMin, attackMax) => {
 const healMonster = (monsterObj, healAmount) => {
   monsterHealth += healAmount;
 
-  logMessage(`${monsterObj.name} Heal: ${healAmount}`, "red");
+  logMessage(`${monsterObj.name} Heal: ${healAmount}`, "#e60000");
 };
 
 // Creating monsters object
@@ -147,7 +147,7 @@ function displayRandomMonster() {
   // Message in logContainer
   logMessage(`You fight: ${currentMonster.name}`);
   logMessage("Player Health: " + playerHealth, "blue");
-  logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+  logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "#e60000");
 }
 displayRandomMonster();
 
@@ -179,7 +179,7 @@ function winGame() {
       disable[i].disabled = true;
     }
 
-    logMessage("Monster wins!", "red");
+    logMessage("Monster wins!", "#e60000");
   }
   else if (monsterHealth <= 0) {
     winner = "player";
@@ -244,23 +244,23 @@ function checkWinMessage() {
     monsterHealth = 0;
 
     logMessage("Player Health: " + playerHealth, "blue");
-    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "#e60000");
   }
   else if (playerHealth <= 0) {
     playerHealth = 0;
     
     logMessage("Player Health: " + playerHealth, "blue");
-    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "#e60000");
   } 
   else if (monsterHealth <= 0) {
     monsterHealth = 0;
 
     logMessage("Player Health: " + playerHealth, "blue");
-    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "#e60000");
   }
   else {
     logMessage("Player Health: " + playerHealth, "blue");
-    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "red");
+    logMessage(`${currentMonster.name} Health: ${monsterHealth}`, "#e60000");
   }
 }
 
