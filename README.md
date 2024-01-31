@@ -1,7 +1,6 @@
 # Monster Game
 
-Welcome to the <a href="https://berger101.github.io/Monster-Game/">Monster Slaying Game</a>, an exciting text-based adventure where you, the player, embark on a journey to defeat monstrous creatures and try your best luck to emerge victorious! It features four totally chosen random monsters with different unique abilities, all ready to face and utterly defeat the users character to steal your glory and fame.
-
+Welcome to the <a href="https://berger101.github.io/Monster-Game/">Monster Slaying Game</a>, an exciting text-based adventure where you, the player, embark on a journey to defeat monstrous creatures and try your best luck to emerge victorious! It features four totally chosen random monsters all ready to face and utterly defeat the users character to steal your glory and fame. Each monster presents a unique set of challenges, requiring players to adapt their strategies and make tactical decisions to emerge victorious in the Monster Slaying Game. Good luck, brave adventurer!
 <img src="assets/images/amiresponsive.png">
 
 ## Game Features
@@ -45,3 +44,15 @@ Game Options
   <li>Click the "Start New Game" button to initiate a new adventure. All buttons will be enabled, and the game will reset.</li>
 </ul>
 <img src="assets/images/buttons.png">
+
+Monsters
+<ul>
+  <b>Big Monster:</b>
+  <li>The Big Monster is a colossal and formidable creature with immense strength and durability. Its attacks pack a significant punch, and defeating it requires strategic planning and skill. Watch out for its powerful blows and be prepared for a challenging battle against this giant adversary.</li>
+  <b>Fire Demon:</b>
+  <li>The Fire Demon is a creature from the depths of the underworld, wielding the power of flames. Its attacks are accompanied by scorching fire, dealing both physical and fire damage. Players need to be cautious and consider using fire-resistant equipment or special tactics to overcome this fiery foe.</li>
+  <b>Ghost:</b>
+  <li>The Ghost is a spectral entity with the ability to phase in and out of the physical realm. It possesses ethereal attacks that may bypass traditional defenses. Engaging with a Ghost requires a keen understanding of its supernatural abilities, and players might need specific tools or skills to combat this elusive and haunting adversary.</li>
+  <b>Vampire:</b>
+  <li>The Vampire is a cunning and immortal creature that feeds on the life force of its victims. It has the ability to regenerate health during battle, making it a challenging opponent. Players should consider employing tactics that disrupt the Vampire's life-draining abilities and exploit its weaknesses to ensure success in the fight.</li>
+</ul>
