@@ -66,6 +66,16 @@ Monsters
   <li>The Vampire is a cunning and immortal creature that feeds on the life force of its victims. It has the ability to regenerate health during battle, making it a challenging opponent. Players should consider employing tactics that disrupt the Vampire's life-draining abilities and exploit its weaknesses to ensure success in the fight.</li>
 </ul>
 
+## Refactoring
+
+<ul>
+  <li>After building the monster slaying game project, I decided to look how to make the code more clean and shorten the length of some repetitive code.</li>
+  <li>I remade some functions into arrow functions.</li>
+  <li>I refactored some if-else statements into ternary operators.</li>
+  <li>I made my click event listener into switch case and functions instead of one big pile of code.</li>
+  <li>I took away repetitive code and made it into functions to be reused several times.</li>
+</ul>
+
 ## Testing
 
 <ul>
