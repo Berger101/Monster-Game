@@ -87,6 +87,13 @@ Accessibility
 </ul>
 <img src="assets/images/lighthouse.png">
 
+JSHint
+<ul>
+  <li>I confirmed there were no necessary warnings found when passing through the official <a href="https://jshint.com/">JSHint validator</a>.</li>
+  <li>Warnings found in jshint is because of the prettier extension in VS Code and choosen not to be changed.</li>
+</ul>
+<img src="assets/images/validatorjshint.png">
+
 ## Deployment
 
 The site was deployed to GitHub pages. The steps to deploy are as follows:
