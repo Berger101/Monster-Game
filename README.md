@@ -1,6 +1,6 @@
 # Monster Game
 
-<a href="https://berger101.github.io/Monster-Game/">Monster Game</a> 
+Welcome to the <a href="https://berger101.github.io/Monster-Game/">Monster Slaying Game</a>, an exciting text-based adventure where you, the player, embark on a journey to defeat monstrous creatures and try your best luck to emerge victorious! It features four totally random monsters with different unique abilities, all ready to face and defeat the users character.
 
 <img src="assets/images/amiresponsive.png">
 
