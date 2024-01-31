@@ -3,6 +3,10 @@
 Welcome to the <a href="https://berger101.github.io/Monster-Game/">Monster Slaying Game</a>, an exciting text-based adventure where you, the player, embark on a journey to defeat monstrous creatures and try your best luck to emerge victorious! It features four totally chosen random monsters all ready to face and utterly defeat the users character to steal your glory and fame. Each monster presents a unique set of challenges, requiring players to adapt their strategies and make tactical decisions to emerge victorious in the Monster Slaying Game. Good luck, brave adventurer!
 <img src="assets/images/amiresponsive.png">
 
+## Wireframes
+
+<img src="assets/images/wireframesdesktop.png" width="400" height="440"> <img src="assets/images/wireframemobile.png" width="300" height="400">
+
 ## Game Features
 
 <ul>
