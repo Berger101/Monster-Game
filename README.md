@@ -57,6 +57,16 @@ Monsters
   <li>The Vampire is a cunning and immortal creature that feeds on the life force of its victims. It has the ability to regenerate health during battle, making it a challenging opponent. Players should consider employing tactics that disrupt the Vampire's life-draining abilities and exploit its weaknesses to ensure success in the fight.</li>
 </ul>
 
+## Testing
+
+<ul>
+  <li>I tested that this page works in different browsers: Chrome, Firefox, Safari.</li>
+  <li>I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.</li>
+  <li>I confirmed that all the buttons work and does the correct function.</li>
+  <li>I confirmed that the messages in the log container are the correct values.</li>
+  <li>I confirmed that the instructions and options are readable and easy to understand.</li>
+</ul>
+
 ## Validator Testing
 
 HTML
