@@ -45,6 +45,15 @@ Game Options
 </ul>
 <img src="assets/images/buttons.png">
 
+
+Log Messages
+<ul>
+  <li>The game generates log messages to provide real-time updates and information about the ongoing battle. These messages are displayed in the log container within the game interface.</li>
+  <li>Log messages offer immediate feedback on player actions, such as attacks, special attacks, healing, and more. Players can see the impact of their decisions on the game state.</li>
+  <li>Log messages are color-coded to improve readability and categorize different types of actions. For example, blue messages represent the player and the player attacks, green messages represent healing actions, purple messages represent special attack actions, and red messages represent the monster.</li>
+</ul>
+<img src="assets/images/logmessage.png">
+
 Monsters
 <ul>
   <b>Big Monster:</b>
