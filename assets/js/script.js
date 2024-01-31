@@ -352,7 +352,7 @@ function playerHeal() {
   try {
     let healValue = getRandomValue(8, 20);
     
-    // Ternary operator, simpel function // arrow function
+    // Ternary operator
     playerHealth = (playerHealth + healValue >= 100)
     ? (healthbarValueMonster.style.width = "100%", 100)
     : (playerHealth + healValue);
