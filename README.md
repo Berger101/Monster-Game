@@ -86,3 +86,20 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
   <li>Once the main branch has been selected, the page provided the link to the completed website</li>
 </ul>
 The live link can be found here - <a href="https://berger101.github.io/Monster-Game/">Love Coding</a>
+
+## Credits
+
+Content
+<ul>
+  <li>Some of the text for the README.md file were taken from <a href="https://chat.openai.com/">ChatGPT</a></li>
+</ul>
+
+Styling
+<ul>
+  <li>The styling for the game area was largely taken from the CI <a href="https://jcav23.github.io/CodeInstitute_LoveMaths/">Love Maths</a> project.</li>
+</ul>
+
+Media
+<ul>
+  <li>The images for the player and monsters were taken from <a href="www.google.com">Google</a></li>
+</ul>
